@@ -10,9 +10,13 @@
   </head>
   <body>
     <table>
-      <thead>
-        Calculadora
-      </thead>
+      <tr>
+        <td colspan="4">
+          <input type="text" placeholder="0" class="input" />
+          <button type="button" onclick="onClearButton()">Clear</button>
+        </td>
+      </tr>
+
       <tr>
         <td>
           <button type="button" value="7" onclick="numButton(value)">7</button>
@@ -23,7 +27,11 @@
         <td>
           <button type="button" value="9" onclick="numButton(value)">9</button>
         </td>
-        <td><button type="button" value="+" onclick="operatorButton(value)">+</button></td>
+        <td>
+          <button type="button" value="+" onclick="operatorButton(value)">
+            +
+          </button>
+        </td>
       </tr>
       <tr>
         <td>
@@ -35,7 +43,11 @@
         <td>
           <button type="button" value="6" onclick="numButton(value)">6</button>
         </td>
-        <td><button type="button" value="-" onclick="operatorButton(value)">-</button></td>
+        <td>
+          <button type="button" value="-" onclick="operatorButton(value)">
+            -
+          </button>
+        </td>
       </tr>
       <tr>
         <td>
@@ -47,12 +59,22 @@
         <td>
           <button type="button" value="3" onclick="numButton(value)">3</button>
         </td>
-        <td><button type="button"  value="*" onclick="operatorButton(value)">*</button></td>
+        <td>
+          <button type="button" value="*" onclick="operatorButton(value)">
+            *
+          </button>
+        </td>
       </tr>
       <tr>
-        <td><button type="button" value="0" onclick="numButton(value)">0</button></td>
+        <td>
+          <button type="button" value="0" onclick="numButton(value)">0</button>
+        </td>
         <td><button type="button">.</button></td>
-        <td><button type="button" value="/" onclick="operatorButton(value)">/</button></td>
+        <td>
+          <button type="button" value="/" onclick="operatorButton(value)">
+            /
+          </button>
+        </td>
         <td><button type="button" value="=" onclick="operate()">=</button></td>
       </tr>
     </table>

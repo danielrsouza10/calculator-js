@@ -22,12 +22,16 @@ let value1 = "";
 let value2 = "";
 let operator = "";
 let result = 0;
+const input = document.querySelector('.input');
+
 
 function numButton(value) {
   if (value1 === "" || operator === "") {
     value1 += value;
+    input.value = value1;
   } else {
     value2 += value;
+    input.value = value2;
   }
   console.log(value1);
   console.log(value2);
@@ -44,26 +48,33 @@ function operate() {
     value1 = "";
     value2 = "";
     operator = "";
-    console.log(result);
+    input.value = result;
   } else if (operator === "-") {
     result = parseInt(value1) - parseInt(value2);
     value1 = "";
     value2 = "";
     operator = "";
-    console.log(result);
+    input.value = result;
   } else if (operator === "*") {
     result = parseInt(value1) * parseInt(value2);
     value1 = "";
     value2 = "";
     operator = "";
-    console.log(result);
+    input.value = result;
   } else if (operator === "/") {
     result = parseInt(value1) / parseInt(value2);
     value1 = "";
     value2 = "";
     operator = "";
-    console.log(result);
+    input.value = result;
   }
+}
+
+function onClearButton(){
+  value1="";
+  value2="";
+  result="";
+  input.value = 0;
 }
 
 // function calculator(value1, value2, operator){
