@@ -22,8 +22,7 @@ let value1 = "";
 let value2 = "";
 let operator = "";
 let result = 0;
-const input = document.querySelector('.input');
-
+const input = document.querySelector(".input");
 
 function numButton(value) {
   if (value1 === "" || operator === "") {
@@ -62,18 +61,22 @@ function operate() {
     operator = "";
     input.value = result;
   } else if (operator === "/") {
-    result = parseInt(value1) / parseInt(value2);
-    value1 = "";
-    value2 = "";
-    operator = "";
+    if (value2 != 0) {
+      result = parseInt(value1) / parseInt(value2);
+      value1 = "";
+      value2 = "";
+      operator = "";
+    } else {
+      result = "ERROR";
+    }
     input.value = result;
   }
 }
 
-function onClearButton(){
-  value1="";
-  value2="";
-  result="";
+function onClearButton() {
+  value1 = "";
+  value2 = "";
+  result = "";
   input.value = 0;
 }
 
