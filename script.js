@@ -17,6 +17,15 @@ const buttons = [
   "Clear",
 ];
 
+const calculator = (() => {
+  const add = (a, b) => a + b;
+  const sub = (a, b) => a - b;
+  const mult = (a, b) => a * b;
+  const divid = (a, b) => a / b;
+
+  return { add, sub, mult, divid };
+})();
+
 const container = document.querySelector(".container");
 let value1 = "";
 let value2 = "";
