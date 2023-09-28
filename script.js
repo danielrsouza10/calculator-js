@@ -7,6 +7,8 @@ const calculator = (() => {
   return { add, sub, mult, divid };
 })();
 
+const input = document.querySelector(".input");
+
 let operator = "";
 let firstNumber = "";
 let secondNumber = "";
@@ -15,12 +17,14 @@ function calculate() {
   let result = 0;
   if (operator == "+") {
     result += calculator.add(parseFloat(firstNumber), parseFloat(secondNumber));
+    input.value = result;
     console.log(result);
     firstNumber = "";
     secondNumber = "";
     operator = "";
   } else if (operator == "-") {
     result += calculator.sub(parseFloat(firstNumber), parseFloat(secondNumber));
+    input.value = result;
     console.log(result);
     firstNumber = "";
     secondNumber = "";
@@ -30,6 +34,7 @@ function calculate() {
       parseFloat(firstNumber),
       parseFloat(secondNumber)
     );
+    input.value = result;
     console.log(result);
     firstNumber = "";
     secondNumber = "";
@@ -40,11 +45,14 @@ function calculate() {
         parseFloat(firstNumber),
         parseFloat(secondNumber)
       );
+      input.value = result;
     } else {
       result = "ERRO";
+      input.value = result;
     }
 
     console.log(result);
+    input.value = result;
     firstNumber = "";
     secondNumber = "";
     operator = "";
@@ -55,9 +63,11 @@ function calculate() {
 function numPressed(value) {
   if (operator == "") {
     firstNumber += value;
+    input.value = firstNumber;
     console.log(firstNumber);
   } else {
     secondNumber += value;
+    input.value = secondNumber;
     console.log(secondNumber);
   }
 }
@@ -65,4 +75,11 @@ function numPressed(value) {
 function operatorPressed(value) {
   operator = value;
   console.log(operator);
+}
+
+function onClearButton() {
+  input.value = 0;
+  firstNumber = "";
+  secondNumber = "";
+  operator = "";
 }
