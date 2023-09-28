@@ -7,19 +7,59 @@ const calculator = (() => {
   return { add, sub, mult, divid };
 })();
 
-let result = "";
 let operator = "";
-let number = [];
+let firstNumber = "";
+let secondNumber = "";
 
-result = () => {
+function calculate() {
+  let result = 0;
   if (operator == "+") {
-    calculator.add(1, 2);
+    result += calculator.add(parseFloat(firstNumber), parseFloat(secondNumber));
+    console.log(result);
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+  } else if (operator == "-") {
+    result += calculator.sub(parseFloat(firstNumber), parseFloat(secondNumber));
+    console.log(result);
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+  } else if (operator == "*") {
+    result += calculator.mult(
+      parseFloat(firstNumber),
+      parseFloat(secondNumber)
+    );
+    console.log(result);
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+  } else {
+    if (parseFloat(secondNumber) != 0) {
+      result += calculator.divid(
+        parseFloat(firstNumber),
+        parseFloat(secondNumber)
+      );
+    } else {
+      result = "ERRO";
+    }
+
+    console.log(result);
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
   }
-};
+  return result;
+}
 
 function numPressed(value) {
-  number.push(parseFloat(value));
-  console.log(number);
+  if (operator == "") {
+    firstNumber += value;
+    console.log(firstNumber);
+  } else {
+    secondNumber += value;
+    console.log(secondNumber);
+  }
 }
 
 function operatorPressed(value) {

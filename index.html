@@ -12,7 +12,7 @@
     <table>
       <tr>
         <td colspan="4">
-          <input type="text" placeholder="0" class="input" />
+          <input type="text" value="0" class="input" />
           <button type="button" onclick="onClearButton()">Clear</button>
         </td>
       </tr>
@@ -75,7 +75,9 @@
             /
           </button>
         </td>
-        <td><button type="button" value="=" onclick="operate()">=</button></td>
+        <td>
+          <button type="button" value="=" onclick="calculate()">=</button>
+        </td>
       </tr>
     </table>
     <div class="container"></div>
